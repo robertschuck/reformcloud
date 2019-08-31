@@ -39,9 +39,8 @@ final class ReformCloudLauncher implements Serializable {
         final List<String> options = Arrays.asList(args);
 
         if (StringUtil.USER_NAME.equalsIgnoreCase("root")
-            && StringUtil.OS_NAME.toLowerCase().contains("linux")
-            && !options.contains("--ignore-root")) {
-            System.out.println("You cannot run ReformCloud as root user");
+            && StringUtil.OS_NAME.toLowerCase().contains("linux")) {
+            System.out.println("You cannot run ReformCloud as root user! If you don't know how to create a new user or why you shouldn't do anything using the root user, I recommend terminating the server.");
             try {
                 Thread.sleep(2000);
             } catch (final InterruptedException ignored) {
